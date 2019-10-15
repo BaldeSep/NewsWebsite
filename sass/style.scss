@@ -16,6 +16,7 @@ $dark-bg: #000;
 $dark-text: #000;
 $primary-color: #c72727;
 $light-text: #fff;
+$max-width: 1098px;
 
 // html body
 html,
@@ -55,7 +56,7 @@ header {
     padding: 5px;
   }
   #navbar {
-    max-width: 1098px;
+    max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
     display: flex;
