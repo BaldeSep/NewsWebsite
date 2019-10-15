@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato|Staatliches&display=swap");
 *,
 *::before,
 *::after {
@@ -149,5 +150,105 @@ header .site-links a {
 header .site-links .active-link {
   background-color: #c72727;
   color: #fff;
+}
+
+.showcase-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1098px;
+  height: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 600px) {
+  .showcase-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+#showcase {
+  position: relative;
+  background: url("../images/featured.jpg") center center no-repeat/cover;
+  height: 50vh;
+  padding: 32px;
+  overflow: hidden;
+}
+
+#showcase::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+#showcase #showcase-content {
+  position: relative;
+  z-index: 200;
+}
+
+@media screen and (min-width: 600px) {
+  #showcase #showcase-content {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+}
+
+#showcase #showcase-content .tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 6px;
+  border-radius: 10px;
+  background: #f99500;
+}
+
+#showcase #showcase-content .showcase-title {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  font-family: "Staatliches", cursive;
+}
+
+#showcase #showcase-content .showcase-paragraph {
+  display: block;
+  font-weight: normal;
+  text-transform: none;
+  line-height: 1.5rem;
+}
+
+#showcase #showcase-content > * {
+  color: #fff;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #000;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.btn-primary {
+  background: #c72727;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #ba2424;
 }
 /*# sourceMappingURL=style.css.map */

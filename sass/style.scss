@@ -1,5 +1,7 @@
 // Import lato font from fonts.google.com
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+// Import Staatliches font from fonts.google.com
+@import url("https://fonts.googleapis.com/css?family=Lato|Staatliches&display=swap");
 
 // Reset
 *,
@@ -15,6 +17,7 @@ $light-bg: #fff;
 $dark-bg: #000;
 $dark-text: #000;
 $primary-color: #c72727;
+$secondary-color: #f99500;
 $light-text: #fff;
 $max-width: 1098px;
 
@@ -112,5 +115,97 @@ header {
       background-color: $primary-color;
       color: $light-text;
     }
+  }
+}
+
+// Hero section
+
+@mixin desktop-up-showcase {
+  @media screen and (min-width: 600px) {
+    @content;
+  }
+}
+
+.showcase-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  max-width: $max-width;
+  height: 100%;
+  margin: auto;
+  @include desktop-up-showcase {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#showcase {
+  position: relative;
+  background: url("../images/featured.jpg") center center no-repeat / cover;
+  height: 50vh;
+  padding: 32px;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
+
+  #showcase-content {
+    position: relative;
+    z-index: 200;
+    @include desktop-up-showcase {
+      grid-column: 1/2;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 6px;
+      border-radius: 10px;
+      background: $secondary-color;
+    }
+
+    .showcase-title {
+      display: block;
+      font-size: 2rem;
+      font-weight: bold;
+      font-family: "Lato", sans-serif;
+      font-family: "Staatliches", cursive;
+    }
+
+    .showcase-paragraph {
+      display: block;
+      font-weight: normal;
+      text-transform: none;
+      line-height: 1.5rem;
+    }
+
+    & > * {
+      color: $light-text;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Buttons
+.btn {
+  padding: 10px 20px;
+  background: #000;
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+.btn-primary {
+  background: $primary-color;
+  color: $light-text;
+  &:hover {
+    background: darken($primary-color, 3%);
   }
 }
