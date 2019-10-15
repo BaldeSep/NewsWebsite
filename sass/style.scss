@@ -1,0 +1,115 @@
+// Import lato font from fonts.google.com
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+// Reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Global Vars
+$light-bg: #fff;
+$dark-bg: #000;
+$dark-text: #000;
+$primary-color: #c72727;
+$light-text: #fff;
+
+// html body
+html,
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  background: $dark-bg;
+  color: $dark-text;
+}
+
+// style for links
+a {
+  display: inline-block;
+  color: $dark-text;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+// style for list
+ul {
+  list-style: none;
+}
+
+// Header
+
+@mixin desktop-up-nav {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+header {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background: $light-bg;
+  @include desktop-up-nav {
+    padding: 5px;
+  }
+  #navbar {
+    max-width: 1098px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include desktop-up-nav {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  .logo img {
+    display: inline-block;
+    width: 180px;
+    margin: 10px;
+    @include desktop-up-nav {
+      flex: 3;
+    }
+  }
+  .social {
+    display: none;
+    @include desktop-up-nav {
+      display: flex;
+      justify-content: flex-end;
+      flex: 3;
+      margin: 10px;
+      i {
+        color: #777;
+        font-size: 2rem;
+        margin: 5px;
+      }
+    }
+  }
+  .site-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop-up-nav {
+      flex: 1;
+      justify-content: flex-end;
+      margin: 10px;
+    }
+    a {
+      padding: 7px;
+      @include desktop-up-nav {
+        padding: 10px;
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: lighten($dark-text, 30%);
+      }
+    }
+    .active-link {
+      background-color: $primary-color;
+      color: $light-text;
+    }
+  }
+}
