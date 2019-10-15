@@ -29,7 +29,7 @@ html,
 body {
   font-family: "Lato", sans-serif;
   font-size: 1rem;
-  background: $dark-bg;
+  background: #f4f4f4;
   color: $dark-text;
 }
 
@@ -147,6 +147,7 @@ header {
   background: url("../images/featured.jpg") center center no-repeat / cover;
   height: 50vh;
   padding: 32px;
+  margin-bottom: 20px;
   overflow: hidden;
   &::before {
     content: "";
@@ -211,4 +212,118 @@ header {
   &:hover {
     background: darken($primary-color, 3%);
   }
+}
+
+// News Display
+
+@mixin tags {
+  display: inline-block;
+  padding: 7px;
+  border-radius: 13px;
+  font-family: "Lato", sans-serif;
+  font-size: 0.7rem;
+  color: #fff;
+  @content;
+}
+
+@mixin tablet-view-news-display {
+  @media screen and (min-width: 601px) {
+    @content;
+  }
+}
+
+@mixin desktop-view-news-display {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
+
+#news-display {
+  font-family: "Staatliches", cursive;
+  background: #f4f4f4;
+}
+
+.editors-pick-container {
+  max-width: $max-width;
+  margin: auto;
+  padding: 0 32px;
+  h2 {
+    padding: 10px 0;
+  }
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 10px;
+
+  .news-item {
+    padding: 20px;
+    grid-column: span 6;
+    background: #fff;
+    @include tablet-view-news-display {
+      grid-column: span 3;
+    }
+    @include desktop-view-news-display {
+      &:first-child,
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-column: span 4;
+        .news-thumbnail {
+          margin: 0;
+          margin-right: 15px;
+          width: 50%;
+        }
+        .news-item-content {
+          width: 50%;
+        }
+      }
+      &:last-child {
+        flex-direction: row-reverse;
+      }
+      grid-column: span 2;
+    }
+    .news-thumbnail {
+      display: block;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    .news-item-summary {
+      font-family: "Lato", sans-serif;
+      line-height: 1.4rem;
+      overflow: hidden;
+    }
+    .news-item-title {
+      font-size: 1.2rem;
+    }
+    .tag-ent {
+      @include tags {
+        background: $ent-tag-bg;
+      }
+    }
+    .tag-sport {
+      @include tags {
+        background: $sport-tag-bg;
+      }
+    }
+    .tag-tech {
+      @include tags {
+        background: $tech-tag-bg;
+      }
+    }
+  }
+}
+
+.news-item.primary-bg {
+  background: $primary-color;
+  color: $light-text;
+}
+
+.news-item.dark-bg {
+  background: #333;
+  color: $light-text;
 }
