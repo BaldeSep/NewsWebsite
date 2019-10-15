@@ -274,6 +274,7 @@ header .site-links .active-link {
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
   grid-gap: 10px;
+  margin-bottom: 50px;
 }
 
 .news-grid .news-item {
@@ -375,5 +376,128 @@ header .site-links .active-link {
 .news-item.dark-bg {
   background: #333;
   color: #fff;
+}
+
+footer {
+  background: #333;
+  padding: 25px;
+}
+
+.footer-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  grid-gap: 15px;
+  max-width: 1098px;
+  margin: auto;
+}
+
+.footer-item {
+  grid-column: span 8;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+@media screen and (min-width: 601px) {
+  .footer-item {
+    grid-column: span 2;
+  }
+}
+
+.footer-item > * {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.footer-item:first-child {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (min-width: 601px) {
+  .footer-item:first-child {
+    grid-column: span 3;
+    border-bottom: 0;
+  }
+}
+
+.footer-item .footer-logo {
+  display: inline-block;
+  width: 150px;
+}
+
+.footer-item h2 {
+  font-family: "Staatliches", cursive;
+  font-size: 1.2rem;
+}
+
+.footer-item .footer-email-newsletter {
+  padding-bottom: 20px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (min-width: 601px) {
+  .footer-item .footer-email-newsletter {
+    border-bottom: 0;
+  }
+}
+
+.footer-item .footer-email-newsletter .newsletter-form input {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+.footer-item .footer-email-newsletter .newsletter-form a[type="submit"] {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.footer-site-links h2 {
+  margin-bottom: 15px;
+}
+
+.footer-site-links li a {
+  color: #fff;
+}
+
+.footer-site-links li a:hover {
+  color: #c72727;
+}
+
+.footer-site-links li {
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+}
+
+.footer-join-club h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-join-club p {
+  margin-bottom: 5px;
+}
+
+.copyright {
+  grid-column: 1 / -1;
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+  background: #444;
+}
+
+.btn-secondary {
+  background: #f99500;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #d58000;
 }
 /*# sourceMappingURL=style.css.map */
