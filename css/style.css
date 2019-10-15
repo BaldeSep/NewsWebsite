@@ -373,8 +373,16 @@ header .site-links .active-link {
   color: #fff;
 }
 
+.news-item.primary-bg a {
+  color: #fff;
+}
+
 .news-item.dark-bg {
   background: #333;
+  color: #fff;
+}
+
+.news-item.dark-bg a {
   color: #fff;
 }
 
