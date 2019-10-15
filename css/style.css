@@ -500,4 +500,86 @@ footer {
 .btn-secondary:hover {
   background: #d58000;
 }
+
+#about {
+  background: #f4f4f4;
+  padding: 0 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.about-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  grid-gap: 20px;
+  max-width: 1098px;
+  margin: auto;
+}
+
+.about-text-content {
+  grid-column: 1/-1;
+  padding: 1rem;
+  background: #fff;
+  text-align: left;
+}
+
+@media screen and (min-width: 601px) {
+  .about-text-content {
+    grid-column: span 6;
+  }
+}
+
+.about-text-content h1 {
+  margin-bottom: 10px;
+  font-family: "Staatliches", cursive;
+  font-size: 1.9rem;
+}
+
+.about-text-content p {
+  line-height: 1.5rem;
+  color: #4d4d4d;
+}
+
+.about-join {
+  grid-column: 1/-1;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (min-width: 601px) {
+  .about-join {
+    grid-column: span 2;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+.about-join h2 {
+  margin-bottom: 10px;
+  font-family: "Staatliches", cursive;
+}
+
+.about-join p {
+  margin-bottom: 5px;
+}
+
+.about-join a {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+.about-join.primary-bg {
+  background: #c72727;
+  color: #fff;
+}
 /*# sourceMappingURL=style.css.map */

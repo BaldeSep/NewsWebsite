@@ -442,3 +442,80 @@ footer {
     background: darken($secondary-color, 7%);
   }
 }
+
+// About Page
+
+@mixin tablet-up-about {
+  @media screen and (min-width: 601px) {
+    @content;
+  }
+}
+
+// About section
+#about {
+  background: #f4f4f4;
+  padding: 0 32px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 20px;
+  max-width: $max-width;
+  margin: auto;
+}
+
+.about-text-content {
+  grid-column: 1/-1;
+  padding: 1rem;
+  background: #fff;
+  text-align: left;
+  @include tablet-up-about {
+    grid-column: span 6;
+  }
+  h1 {
+    margin-bottom: 10px;
+    font-family: "Staatliches", cursive;
+    font-size: 1.9rem;
+  }
+  p {
+    line-height: 1.5rem;
+    color: lighten(#000, 30%);
+  }
+}
+
+.about-join {
+  grid-column: 1/-1;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  @include tablet-up-about {
+    grid-column: span 2;
+    height: fit-content;
+  }
+  h2 {
+    margin-bottom: 10px;
+    font-family: "Staatliches", cursive;
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  a {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+// button dark
+.btn-dark {
+  background: #333;
+  color: $light-text;
+}
+
+.about-join.primary-bg {
+  background: $primary-color;
+  color: $light-text;
+}
