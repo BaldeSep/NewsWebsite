@@ -525,3 +525,111 @@ footer {
   background: $primary-color;
   color: $light-text;
 }
+
+// Article Section
+@mixin tablet-up-article {
+  @media screen and (min-width: 601px) {
+    @content;
+  }
+}
+
+#article {
+  background: #f4f4f4;
+}
+
+.article-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 20px;
+  max-width: $max-width;
+  padding: 32px;
+  margin: auto;
+}
+
+.article-content {
+  padding: 15px;
+  background: #fff;
+  grid-column: 1/-1;
+  @include tablet-up-article {
+    grid-column: span 2;
+    grid-row: 1/-1;
+  }
+  img {
+    width: 100%;
+  }
+  h1 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-family: "Staatliches", cursive;
+    text-align: center;
+    @include tablet-up-article {
+      font-size: 3rem;
+      text-align: left;
+    }
+  }
+  .article-writer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f1f1f1;
+    p {
+      font-size: 0.8rem;
+    }
+    .tag-ent {
+      @include tags {
+        background: $ent-tag-bg;
+      }
+    }
+  }
+}
+
+.aticle-category {
+  height: fit-content;
+  padding: 10px;
+  background: #fff;
+  text-align: center;
+  grid-column: 1/-1;
+  @include tablet-up-article {
+    grid-column: span 1;
+  }
+  h2 {
+    font-family: "Staatliches", cursive;
+  }
+  li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.5);
+  }
+  li a {
+    font-weight: normal;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.article-join {
+  height: fit-content;
+  padding: 15px;
+  background: $secondary-color;
+  color: $light-text;
+  text-align: center;
+  grid-column: 1/-1;
+  @include tablet-up-article {
+    grid-column: span 1;
+  }
+  h2 {
+    font-family: "Staatliches", cursive;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+  a {
+    font-size: 1rem;
+    width: 100%;
+  }
+}
